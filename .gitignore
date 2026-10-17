@@ -1,3 +1,17 @@
+# Python
 __pycache__/
 *.pyc
+
+# VS Code
 .vscode/
+
+# SQLite Database
+data/*.db
+
+# Python仮想環境（将来用）
+venv/
+.venv/
+
+# OS系
+.DS_Store
+Thumbs.db
