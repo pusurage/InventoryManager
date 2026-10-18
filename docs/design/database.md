@@ -2,27 +2,62 @@
 
 ## users
 
-ユーザー情報
+ユーザ情報
 
-- id
-- name
-- image_path
+|項目|説明|
+|-----|-----|
+|id|主キー|
+|name|ユーザ名|
+|image_path|画像パス|
+
+---
 
 ## items
 
 アイテムマスタ
 
-- id
-- name
-- effect
-- default_duration
+|項目|説明|
+|-----|-----|
+|id|主キー|
+|name|アイテム名|
+|effect|アイテム効果|
+|default_duration|デフォルト有効時間|
+
+---
 
 ## user_items
 
-ユーザー所持アイテム
+リスナー所持アイテム
 
-- id
-- user_id
-- item_id
-- expires_at
-- created_at
+|項目|説明|
+|-----|-----|
+|id|主キー|
+|user_id|所有者|
+|item_id|アイテム|
+|created_at|取得日時|
+|expires_at|消滅日時|
+
+---
+
+## アイテム追加
+
+アイテム取得時
+
+- created_at = 現在時刻
+- expires_at = 現在時刻 + 4日
+
+---
+
+## アイテム削除
+
+同一アイテムを複数所持している場合
+
+expires_at が最も早いレコードから削除する。
+
+例
+
+アイテム1
+
+- 残り1時間 ← 削除対象
+- 残り8時間
+- 残り2日
