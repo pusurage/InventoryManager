@@ -8,6 +8,10 @@ __pycache__/
 # SQLite Database
 data/*.db
 
+# Environment Variables
+.env
+.env.*
+
 # Python仮想環境（将来用）
 venv/
 .venv/
